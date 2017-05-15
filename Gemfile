@@ -16,13 +16,15 @@ platforms :rbx do
 end
 
 group :test do
-  if ENV['RAILS_VERSION'] == 'edge'
-    gem 'activerecord', :github => 'rails/rails'
-    gem 'actionmailer', :github => 'rails/rails'
-  else
-    gem 'activerecord', (ENV['RAILS_VERSION'] || ['>= 3.0', '< 4.2'])
-    gem 'actionmailer', (ENV['RAILS_VERSION'] || ['>= 3.0', '< 4.2'])
-  end
+  # if ENV['RAILS_VERSION'] == 'edge'
+    # gem 'activerecord', :github => 'rails/rails'
+    # gem 'actionmailer', :github => 'rails/rails'
+  # else
+    # gem 'activerecord', (ENV['RAILS_VERSION'] || ['>= 3.0', '< 4.2'])
+    gem 'activerecord', '~> 5.0.0.1'
+    # gem 'actionmailer', (ENV['RAILS_VERSION'] || ['>= 3.0', '< 4.2'])
+    gem 'actionmailer', '~> 5.0.0.1'
+  # end
 
   gem 'coveralls', :require => false
   gem 'rspec', '>= 3'
